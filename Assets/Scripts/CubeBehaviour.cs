@@ -6,22 +6,32 @@ public class CubeBehaviour : MonoBehaviour
     [SerializeField] Explosion _explosion;
     [SerializeField] CubeSplitter _cubeSplitter;
 
+    private float _splitChance = 1.0f;
+    private float _chanceDivider = 2.0f;
+
     private void OnEnable()
     {
-        _inputReader.MouseClicked += HandleClick;
+        _inputReader.CubeClicked += HandleCubeClicked;
     }
 
     private void OnDisable()
     {
-        _inputReader.MouseClicked -= HandleClick;
+        _inputReader.CubeClicked -= HandleCubeClicked;
     }
 
-    private void HandleClick()
+    private void HandleCubeClicked()
     {
-        var spawnedCubes = _cubeSplitter.TrySplit();
+        float chance = Random.value;
 
-        if (spawnedCubes != null)
-            _explosion.Explode(spawnedCubes);
+        if (chance < _splitChance)
+        {
+            var spawnedCubes = _cubeSplitter.Split();
+
+            if (spawnedCubes != null)
+                _explosion.Explode(spawnedCubes);
+
+            _splitChance /= _chanceDivider;
+        }
 
         Destroy(gameObject);
     }
