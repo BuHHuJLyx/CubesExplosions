@@ -32,7 +32,11 @@ public class CubeClickHandler : MonoBehaviour
         {
             List<Rigidbody> spawnedCubes = _cubeSplitter.Split(_cube);
 
-            _explosion.Explode(spawnedCubes);
+            _explosion.Explode(spawnedCubes, _cube.transform.position);
+        }
+        else
+        {
+            _explosion.ExplodeAround(_cube.transform.position, _cube.transform.localScale.x);
         }
 
         _cubeSplitter.DestroyCube(_cube);

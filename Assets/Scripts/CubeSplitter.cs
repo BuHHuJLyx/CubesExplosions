@@ -19,6 +19,7 @@ public class CubeSplitter : MonoBehaviour
         {
             Cube cubeClone = Instantiate(mainCube, mainCube.transform.position, mainCube.transform.rotation);
             cubeClone.transform.localScale = mainCube.transform.localScale / _scaleDivider;
+            cubeClone.SetSplitChance(mainCube.SplitChance);
             _colorChanger.SetRandomColor(cubeClone);
             cubeClones.Add(cubeClone.GetComponent<Rigidbody>());
         }
