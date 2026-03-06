@@ -3,11 +3,11 @@ using UnityEngine;
 
 public class InputReader : MonoBehaviour
 {
-    [SerializeField] Camera _camera;
+    [SerializeField] private Camera _camera;
 
     private Ray _ray;
 
-    public event Action<CubeBehaviour> CubeClicked;
+    public event Action<Cube> CubeClicked;
 
     private void Update()
     {
@@ -19,7 +19,7 @@ public class InputReader : MonoBehaviour
 
             if (Physics.Raycast(_ray, out hit, Mathf.Infinity))
             {
-                if (hit.collider.TryGetComponent(out CubeBehaviour cube))
+                if (hit.collider.TryGetComponent(out Cube cube))
                 {
                     CubeClicked?.Invoke(cube);
                 }

@@ -1,14 +1,16 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class CubeClickHandler : MonoBehaviour
 {
     [SerializeField] private InputReader _inputReader;
-
-    private CubeBehaviour _cubeBehaviour;
+    [SerializeField] private Explosion _explosion;
+    [SerializeField] private CubeSplitter _cubeSplitter;
+    [SerializeField] private Cube _cube;
 
     private void Awake()
     {
-        _cubeBehaviour = GetComponent<CubeBehaviour>();
+        _cube = GetComponent<Cube>();
     }
 
     private void OnEnable()
@@ -21,11 +23,18 @@ public class CubeClickHandler : MonoBehaviour
         _inputReader.CubeClicked -= OnCubeClicked;
     }
 
-    private void OnCubeClicked(CubeBehaviour clickedCube)
+    private void OnCubeClicked(Cube clickedCube)
     {
-        if (clickedCube != _cubeBehaviour)
+        if (clickedCube != _cube)
             return;
 
-        _cubeBehaviour.HandleCubeClicked();
+        if (_cube.TrySplit())
+        {
+            List<Rigidbody> spawnedCubes = _cubeSplitter.Split(_cube);
+
+            _explosion.Explode(spawnedCubes);
+        }
+
+        _cubeSplitter.DestroyCube(_cube);
     }
 }

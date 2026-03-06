@@ -312,6 +312,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CubeClickHandler
   _inputReader: {fileID: 1328465}
+  _explosion: {fileID: 0}
+  _cubeSplitter: {fileID: 0}
+  _cube: {fileID: 0}
 --- !u!114 &171986653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -321,11 +324,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 171986651}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81340dad44dbac54e86157951b2de405, type: 3}
+  m_Script: {fileID: 11500000, guid: 8aa89bb519529e8419632c3f333bfab7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CubeBehaviour
-  _explosion: {fileID: 550813171}
-  _cubeSplitter: {fileID: 812099569}
 --- !u!54 &171986654
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -879,6 +880,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32696ddbf63578941824a7f2232c1286, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CubeSplitter
+  _colorChanger: {fileID: 0}
 --- !u!4 &812099570
 Transform:
   m_ObjectHideFlags: 0
@@ -1250,11 +1252,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1651230213}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81340dad44dbac54e86157951b2de405, type: 3}
+  m_Script: {fileID: 11500000, guid: 8aa89bb519529e8419632c3f333bfab7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CubeBehaviour
-  _explosion: {fileID: 550813171}
-  _cubeSplitter: {fileID: 812099569}
 --- !u!114 &1651230223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1268,6 +1268,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CubeClickHandler
   _inputReader: {fileID: 1328465}
+  _explosion: {fileID: 0}
+  _cubeSplitter: {fileID: 0}
+  _cube: {fileID: 0}
 --- !u!1 &2105951866
 GameObject:
   m_ObjectHideFlags: 0
@@ -1303,6 +1306,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CubeClickHandler
   _inputReader: {fileID: 1328465}
+  _explosion: {fileID: 0}
+  _cubeSplitter: {fileID: 0}
+  _cube: {fileID: 0}
 --- !u!114 &2105951868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1312,11 +1318,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2105951866}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81340dad44dbac54e86157951b2de405, type: 3}
+  m_Script: {fileID: 11500000, guid: 8aa89bb519529e8419632c3f333bfab7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CubeBehaviour
-  _explosion: {fileID: 550813171}
-  _cubeSplitter: {fileID: 812099569}
 --- !u!54 &2105951869
 Rigidbody:
   m_ObjectHideFlags: 0
